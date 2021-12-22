@@ -1,19 +1,19 @@
 variable "name" {
   description = "The specification of module name."
   type        = string
-  default     = "tf-ecs-rds-redis"
+  default     = ""
 }
 
 variable "description" {
   description = "The specification of module description."
   type        = string
-  default     = "tf-ecs-rds-redis-description"
+  default     = ""
 }
 
 variable "instance_type" {
   description = "The specification of the instance type."
   type        = string
-  default     = "ecs.n4.large"
+  default     = ""
 }
 
 variable "availability_zone" {
@@ -43,25 +43,31 @@ variable "system_disk_category" {
 variable "system_disk_name" {
   description = "The specification of the system disk name."
   type        = string
-  default     = "system_disk"
+  default     = ""
 }
 
 variable "system_disk_description" {
   description = "The specification of the system disk description."
   type        = string
-  default     = "system_disk_description"
+  default     = ""
 }
 
 variable "image_id" {
   description = "The specification of the image id."
   type        = string
-  default     = "ubuntu_18_04_64_20G_alibase_20190624.vhd"
+  default     = ""
 }
 
 variable "internet_max_bandwidth_out" {
   description = "The specification of the internet max bandwidth out."
   type        = number
   default     = 10
+}
+
+variable "data_disks_name" {
+  description = "The name of the data disk."
+  type        = string
+  default     = ""
 }
 
 variable "ecs_size" {
@@ -76,6 +82,18 @@ variable "category" {
   default     = "cloud_efficiency"
 }
 
+variable "encrypted" {
+  description = "Encrypted the data in this disk."
+  type        = bool
+  default     = false
+}
+
+variable "engine" {
+  description = "Database type."
+  type        = string
+  default     = "MySQL"
+}
+
 variable "engine_version" {
   description = "The specification of the engine version."
   type        = string
@@ -85,7 +103,7 @@ variable "engine_version" {
 variable "rds_instance_type" {
   description = "The specification of the rds instance type."
   type        = string
-  default     = "rds.mysql.s2.large"
+  default     = ""
 }
 
 variable "instance_storage" {
@@ -133,11 +151,11 @@ variable "redis_lazyfree_lazy_eviction" {
 variable "redis_resource_group_id" {
   description = "The specification of the redis resource group id."
   type        = string
-  default     = "rg-123456"
+  default     = ""
 }
 
 variable "redis_instance_class" {
   description = "The specification of the redis resource instance class."
   type        = string
-  default     = "redis.master.large.default"
+  default     = ""
 }
