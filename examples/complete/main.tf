@@ -79,5 +79,4 @@ module "example" {
   redis_lazyfree_lazy_eviction = var.redis_lazyfree_lazy_eviction
   redis_resource_group_id      = data.alicloud_resource_manager_resource_groups.default.ids[0]
   redis_instance_class         = data.alicloud_kvstore_instance_classes.default.instance_classes[0]
-
 }
