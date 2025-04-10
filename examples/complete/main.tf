@@ -23,6 +23,7 @@ data "alicloud_kvstore_instance_classes" "default" {
   zone_id        = data.alicloud_zones.default.zones[0].id
   engine         = "Redis"
   engine_version = var.redis_engine_version
+  product_type   = "OnECS"
 }
 
 module "vpc" {
